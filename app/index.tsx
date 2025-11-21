@@ -1,6 +1,8 @@
+// Simple home screen with navigation buttons to each form page.
 import { Text, View, Button, StyleSheet } from "react-native";
 import { router } from "expo-router";
 
+// Index provides three buttons for navigation: /employee /sign-in and /sing-up
 export default function Index() {
   return (
     <View style={styles.container}>
@@ -11,6 +13,7 @@ export default function Index() {
   );
 }
 
+// Basic styles for the home screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,

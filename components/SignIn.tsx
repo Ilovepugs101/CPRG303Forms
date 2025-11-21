@@ -1,10 +1,15 @@
+// Sign-in form component implemented with Formik and Yup validation.
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+// SignInForm render a sign-in form with email and password using Yup for validation and Formik for submit handling.
 export default function SignInForm() {
+    // Define Yup validation for the form fields
   const validationSchema = Yup.object({
+    // email must be valid
     email: Yup.string().email().required("Email is required"),
+    // password must be valid
     password: Yup.string().required("Password is required"),
   });
 
@@ -52,6 +57,7 @@ export default function SignInForm() {
   );
 }
 
+// Styles for SignInForm component
 const styles = StyleSheet.create({
   container: {
     flex: 1,

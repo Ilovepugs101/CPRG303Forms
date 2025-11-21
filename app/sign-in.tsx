@@ -1,3 +1,4 @@
+// Page that renders the SignInForm component
 import SignInForm from "../components/SignIn";
 
 export default function SignInPage() {
