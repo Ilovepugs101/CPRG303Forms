@@ -1,14 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import SignUpForm from "../components/SignUp";
 
-const SignUp = () => {
-  return (
-    <View>
-      <Text>SignUp</Text>
-    </View>
-  )
+export default function SignUpPage() {
+  return <SignUpForm />;
 }
-
-export default SignUp
-
-const styles = StyleSheet.create({})

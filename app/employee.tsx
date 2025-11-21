@@ -1,14 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { View } from "react-native";
+import EmployeeForm from "../components/Employee";
 
-const Employee = () => {
-  return (
-    <View>
-      <Text>Employee</Text>
-    </View>
-  )
+export default function EmployeePage() {
+  return <EmployeeForm />;
 }
-
-export default Employee
-
-const styles = StyleSheet.create({})
