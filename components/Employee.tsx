@@ -31,6 +31,18 @@ const Employee: React.FC = () => {
     department: "",
   };
 
+  const handleSubmit = async (values: EmployeeFormValues, resetForm: () => void) => {
+    try {
+      // Change collection name here if you want
+      const id = await saveForm("employeeForms", values);
+      Alert.alert("Saved", `Employee saved (id: ${id})`);
+      resetForm();
+    } catch (error: any) {
+      console.error("Save failed", error);
+      Alert.alert("Save failed", error?.message || "Please try again");
+    }
+  };
+
   return (
     <View>
       <Text>Employee Information</Text>
@@ -38,7 +50,9 @@ const Employee: React.FC = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(values) => console.log("Employee Data:", values)}
+        onSubmit={async (values, { resetForm }) => {
+          await handleSubmit(values, resetForm);
+        }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
           <>
