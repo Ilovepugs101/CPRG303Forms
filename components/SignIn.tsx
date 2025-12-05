@@ -2,6 +2,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { router } from "expo-router";
 
 // SignInForm render a sign-in form with email and password using Yup for validation and Formik for submit handling.
 export default function SignInForm() {
@@ -20,7 +21,10 @@ export default function SignInForm() {
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}
-        onSubmit={(values) => console.log("Sign-In Data:", values)}
+        onSubmit={(values) => {
+          console.log("Sign-In Data:", values);
+          router.push("/")
+        }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
           <>
